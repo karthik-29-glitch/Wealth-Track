@@ -1,0 +1,6 @@
+{
+  "name": "Stock & Mutual Fund Investment Portfolio",
+  "description": "Track, analyze personal stock and mutual fund investments, monitor monthly performance, and generate professional academic portfolio reports in Indian Rupee format.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

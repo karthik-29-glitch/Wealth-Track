@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  /* Tabular numbers for financial amounts in INR ₹ */
+  .tabular-nums,
+  .font-mono-num {
+    font-feature-settings: "tnum" 1;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* =========================================================
+   Print Stylesheet for 11-Page Academic Portfolio Report
+   ========================================================= */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm 8mm 10mm;
+  }
+
+  html,
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Hide app navigation, buttons, and control panels in print */
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  /* Academic Report Pages: Each report-page is a separate physical A4 sheet */
+  .report-page {
+    page-break-after: always !important;
+    break-after: page !important;
+    min-height: 270mm;
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+    margin: 0 0 15mm 0 !important;
+    padding: 12mm 14mm !important;
+    background: #ffffff !important;
+  }
+
+  .report-page:last-child {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Prevent page breaks inside cards, tables, and metric blocks */
+  .avoid-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}
+
+/* =========================================================
+   Custom Scrollbar Styling
+   ========================================================= */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
